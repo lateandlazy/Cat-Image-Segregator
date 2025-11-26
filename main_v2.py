@@ -9,22 +9,22 @@ from io import BytesIO
 from transformers import CLIPProcessor, CLIPModel
 
 # ==========================================
-# ⚙️ USER CONFIGURATION (EDIT THIS)
+#  USER CONFIGURATION (EDIT THIS)
 # ==========================================
-CAT_API_KEY = 'live_6tZEBEL1Q2oXCImJf1IV9wQeBute6b9t0oHmFMyS3x62BdiBAhvhuyBvoK4SJZcK' 
-OCI_NAMESPACE = 'bm2szys39gqc'
+CAT_API_KEY = 'YOUR-API-KEY' 
+OCI_NAMESPACE = 'NAMESPACE'
 OCI_BUCKET_NAME = 'bucket-cats'
 
 # --- NOTIFICATION CONFIG ---
-# Paste your Discord Webhook URL here. Leave blank if using Telegram.
-DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1442869708947722300/FUZv6vPPYV1qm4VrUVdR4ZVYw-FvxqFG18NK4ovStBocGAc8mX7RCc8-Cdvtryv8ELHH'
+# Paste your Discord Webhook URL here.Leave blank if using Telegram.
+DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/144286970/FUZv6vPPYV1qm4VrUV-FvxqFGK4ovStBocGAc7RCc8-Cdvtryv8ELHH'
 
-# Or, fill these if you prefer Telegram (Leave blank if using Discord)
+# Or, fill these if you prefer Telegram(Leave blank if using Discord)
 TELEGRAM_BOT_TOKEN = ''
 TELEGRAM_CHAT_ID = ''
 
 # ==========================================
-# 🧠 AI & CLOUD SETUP
+#  AI & CLOUD SETUP
 # ==========================================
 print("Loading AI Brain...")
 MODEL_ID = "openai/clip-vit-base-patch32"
@@ -32,20 +32,20 @@ model = CLIPModel.from_pretrained(MODEL_ID)
 processor = CLIPProcessor.from_pretrained(MODEL_ID)
 
 # ==========================================
-# 🔧 HELPER FUNCTIONS
+#  HELPER FUNCTIONS
 # ==========================================
 
 def send_notification(message):
     """Sends the daily report to Discord or Telegram."""
     try:
-        # 1. Try Discord
+        #  Try Discord
         if DISCORD_WEBHOOK_URL:
             data = {"content": message}
             requests.post(DISCORD_WEBHOOK_URL, json=data)
             print(" Discord Notification Sent.")
             return
 
-        # 2. Try Telegram
+        #  Try Telegram
         elif TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
             data = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
@@ -90,16 +90,16 @@ def fetch_cats():
     except:
         return []
 
-# ==========================================
-# 🚀 MAIN LOGIC WITH REPORTING
-# ==========================================
+
+#  MAIN LOGIC WITH REPORTING
+###########################################
 def main():
     start_time = datetime.datetime.now()
     print(f"--- Job Started at {start_time} ---")
     
     cats = fetch_cats()
     
-    # 📊 Statistics Counters
+    #  Statistics Counters
     stats = {
         "processed": 0,
         "failed": 0,
@@ -139,7 +139,7 @@ def main():
             print(f"Error on {cat['id']}: {e}")
             stats["failed"] += 1
 
-    # 📝 Generate Report Message
+    #  Generate Report Message
     duration = datetime.datetime.now() - start_time
     report = (
         f"** Daily Cat Segregator Report**\n"
@@ -154,7 +154,7 @@ def main():
         f" *Oracle Cloud System Status: Online*"
     )
 
-    # Send It!
+    # Send Notification
     print("Sending Notification...")
     send_notification(report)
     print("Done.")
