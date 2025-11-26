@@ -1,0 +1,17 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading AI Brain (CLIP)... this takes 10-20 seconds.
+---------------------------------------
+Starting Cat Segregator v2...
+Found 10 cats to process.
+Processing: 4kq.jpg -> [Warm | Normal]
+Processing: 98d.jpg -> [Warm | Normal]
+Processing: ado.jpg -> [Warm | Normal]
+Processing: ae2.jpg -> [Warm | Normal]
+Processing: aiu.jpg -> [Warm | Normal]
+Processing: bp9.jpg -> [Warm | Normal]
+Processing: bpu.jpg -> [Warm | Funny]
+Processing: bvi.jpg -> [Warm | Normal]
+Processing: d6a.jpg -> [Cool | Normal]
+Processing: MTYzNDk2Mw.jpg -> [Warm | Funny]
+Batch Complete.
+---------------------------------------
