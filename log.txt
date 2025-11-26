@@ -15,3 +15,19 @@ Processing: d6a.jpg -> [Cool | Normal]
 Processing: MTYzNDk2Mw.jpg -> [Warm | Funny]
 Batch Complete.
 ---------------------------------------
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading AI Brain...
+--- Job Started at 2025-11-26 08:00:09.025474 ---
+Processing: 1g5.jpg -> [Warm | Normal]
+Processing: 1rq.jpg -> [Warm | Normal]
+Processing: 23r.jpg -> [Warm | Normal]
+Processing: 44j.jpg -> [Cool | Normal]
+Processing: 8ge.jpg -> [Warm | Funny]
+Processing: bko.jpg -> [Warm | Funny]
+Processing: cfq.jpg -> [Warm | Normal]
+Processing: dg7.jpg -> [Warm | Funny]
+Processing: MjAxNTU5MA.jpg -> [Warm | Normal]
+Processing: 8Ggv2cWP_.jpg -> [Warm | Normal]
+Sending Notification...
+ Discord Notification Sent.
+Done.
